@@ -1,4 +1,10 @@
 [alias]
+  # My custom git alias
+	
+  # get remote url of origin
+  rurl = config --get remote.origin.url
+  rs = remote show origin
+
 
   ##
   # One letter alias for our most frequent commands.
@@ -44,6 +50,9 @@
   # add just the files that are updated.
   au = add --update
 
+  # enter interactive mode 
+  ai = add --interactive
+
   ### branch ###
 
   # branch - edit the description
@@ -56,6 +65,9 @@
   bnm = branch --no-merged
 
   ### commit ###
+
+  # git add all then commit --message
+  caam = commit -am
 
   # commit - amend the tip of the current branch rather than creating a new commit.
   ca = commit --amend
@@ -247,6 +259,9 @@
 
   # revert - undo the changes from some existing commits
   rv = revert
+
+  # revert no edit
+  rvne = revert --no-edit
 
   # revert without autocommit; useful when you're reverting more than one commits' effect to your index in a row.
   rvnc = revert --no-commit
@@ -1136,3 +1151,11 @@
   ps = push
   cl = remote prune origin
   pra = pull --rebase=preserve --autostash
+
+  lol = log --graph --decorate --pretty=oneline --abbrev-commit
+  lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+[color]
+        branch = auto
+        diff = auto
+        interactive = auto
+        status = auto
