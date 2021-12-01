@@ -1,9 +1,23 @@
 [alias]
-  # My custom git alias
+  
+  ## CUSTOM ##
+  ps = push
+  cl = remote prune origin
+  pra = pull --rebase=preserve --autostash
 	
   # get remote url of origin
   rurl = config --get remote.origin.url
   rs = remote show origin
+
+
+  # merge continue 
+  mco = merge --continue
+  # merge continue --no-edit
+  mcone = merge --continue --no-edit
+
+  # git log
+  lol = log --graph --decorate --pretty=oneline --abbrev-commit
+  lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
 
 
   ##
@@ -259,9 +273,6 @@
 
   # revert - undo the changes from some existing commits
   rv = revert
-
-  # revert no edit
-  rvne = revert --no-edit
 
   # revert without autocommit; useful when you're reverting more than one commits' effect to your index in a row.
   rvnc = revert --no-commit
@@ -1146,14 +1157,8 @@
   ull = pull
   ush = push
 
-  
-  ## CUSTOM ##
-  ps = push
-  cl = remote prune origin
-  pra = pull --rebase=preserve --autostash
 
-  lol = log --graph --decorate --pretty=oneline --abbrev-commit
-  lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+
 [color]
         branch = auto
         diff = auto
