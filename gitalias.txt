@@ -1,16 +1,19 @@
 [alias]
-  
+
   ## CUSTOM ##
   ps = push
   cl = remote prune origin
   pra = pull --rebase=preserve --autostash
-	
+
+  # ggj merge conflict into staging
+  ggjmpre = !git b -D pre-staging && git f && git o pre-staging && git m --no-ff $1
+  resetpre = !git b -D pre-staging && git f && git o pre-staging
   # get remote url of origin
   rurl = config --get remote.origin.url
   rs = remote show origin
 
 
-  # merge continue 
+  # merge continue
   mco = merge --continue
   # merge continue --no-edit
   mcone = merge --continue --no-edit
@@ -64,7 +67,7 @@
   # add just the files that are updated.
   au = add --update
 
-  # enter interactive mode 
+  # enter interactive mode
   ai = add --interactive
 
   ### branch ###
@@ -407,7 +410,7 @@
 
   # Show the date of the latest commit, in strict ISO 8601 format
   log-latest-date = log -1 --date-order --format=%cI
-  
+
   # Show the recent day
   log-day = log --since yesterday
 
@@ -556,7 +559,7 @@
   # this is a bit hacky because of the parsing, and we welcome
   # better code that works using more-specific git commands.
   track-all-remote-branches = !"f() { git branch -r | grep -v ' -> ' | sed 's/^ \\+origin\\///' ; }; f"
-  
+
   ##
   # Reset & Undo
   ##
@@ -1068,7 +1071,7 @@
   };f"
 
   ### MANAGE TOPIC BRANCES ###
-  
+
   ##
   # Update the current topic branch by synchronizing changes.
   #
@@ -1103,7 +1106,7 @@
   #
   # Customize this alias as you like for your own workflow.
   ##
-  
+
   topic-move = "!f(){ \
     new_branch=\"$1\"; \
     old_branch=$(git branch-name); \
