@@ -5,7 +5,9 @@
   cl = remote prune origin
   pra = pull --rebase=preserve --autostash
 
+  ## Submodules
   prs = pull --recurse-submodules
+  pshm = push origin HEAD:master
 
   # ggj merge conflict into staging
   ggjmpre = !git b -D pre-staging && git f && git o pre-staging && git m --no-ff $1
