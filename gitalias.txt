@@ -5,6 +5,10 @@
   cl = remote prune origin
   pra = pull --rebase=preserve --autostash
 
+  ## Remove certain file out of pull request to staging/master branch	
+  rops = !git f && git o origin/staging -- $1
+  ropm = !git f && git o origin/master -- $1
+
   ## Submodules
   prs = pull --recurse-submodules
   pshm = push origin HEAD:master
