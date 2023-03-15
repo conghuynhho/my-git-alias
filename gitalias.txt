@@ -5,7 +5,7 @@
   cl = remote prune origin
   pra = pull --rebase=preserve --autostash
 
-  ## Remove certain file out of pull request to staging/master branch	
+  ## Remove certain file out of pull request to staging/master branch
   rops = !git f && git o origin/staging -- $1
   ropm = !git f && git o origin/master -- $1
 
@@ -13,9 +13,11 @@
   prs = pull --recurse-submodules
   pshm = push origin HEAD:master
 
+  ## GGJ
   # ggj merge conflict into staging
   ggjmpre = !git b -D pre-staging && git f && git o pre-staging && git m --no-ff $1
   resetpre = !git b -D pre-staging && git f && git o pre-staging
+  ggjcbs = !git f && git o -b $1 origin/staging
   # get remote url of origin
   rurl = config --get remote.origin.url
   rs = remote show origin
